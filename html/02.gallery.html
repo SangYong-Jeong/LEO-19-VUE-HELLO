@@ -13,17 +13,14 @@
 	<div id="app">
 		<div class="wrapper">
 			<div class="show-img">
-				<img src="../img/f1.jpg" alt="big">
+				<img :src="src" :alt="title">
+				<h2 class="title">{{title}}</h2>
 			</div>
 			<ul class="thumb-wrap">
 				<!-- li*7>img[src="../img/f$.jpg" alt="img$"] -->
-				<li class="thumb"><img src="../img/f1.jpg" alt="img1"></li>
-				<li class="thumb"><img src="../img/f2.jpg" alt="img2"></li>
-				<li class="thumb"><img src="../img/f3.jpg" alt="img3"></li>
-				<li class="thumb"><img src="../img/f4.jpg" alt="img4"></li>
-				<li class="thumb"><img src="../img/f5.jpg" alt="img5"></li>
-				<li class="thumb"><img src="../img/f6.jpg" alt="img6"></li>
-				<li class="thumb"><img src="../img/f7.jpg" alt="img7"></li>
+				<li class="thumb" v-for="v in imgs" :key="v.id">
+					<img :src="v.src" :alt="v.title" @click="showImg">
+				</li>
 			</ul>
 		</div>
 	</div>
